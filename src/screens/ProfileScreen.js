@@ -35,7 +35,7 @@ const ProfileScreen = () => {
     if (!userInfo) {
       navigate("/login");
     } else {
-      if (!user || !user.name || success) {
+      if (!user || !user.name || success || userInfo._id !== user._id) {
         dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
         dispatch(ListMyOrders())
@@ -160,7 +160,7 @@ const ProfileScreen = () => {
                   </td>
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
-                      <Button className="btn-sm">Details</Button>
+                      <Button variant="light" className="btn-sm">Details</Button>
                     </LinkContainer>
                   </td>
                 </tr>
