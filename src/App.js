@@ -12,6 +12,7 @@ import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
+import UserListScreen from "./screens/UserListScreen";
 import About from "./components/About";
 // import Contact from "./components/Contact"
 import VolkswagenScreen from "./screens/VolkswagenScreen";
@@ -36,6 +37,8 @@ function App() {
           <Route path="/product/:id" element={<ProductScreen />} />
           <Route path="/cart/:id" element={<CartScreen />} />
           <Route path="/cart/:id?" element={<CartScreen />} />
+
+          <Route path="/admin/userlist" element={<UserListScreen />} />
         </Routes>
  
       <Footer />

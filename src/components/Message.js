@@ -2,7 +2,7 @@ import React from 'react'
 import  {Alert}  from 'react-bootstrap'
 
 
-const Message = ({variant,childern}) => {
+function Message({variant,childern}){
   return (
     <Alert className="text-primary" key={variant} variant={variant}>
         {childern}
