@@ -31,7 +31,7 @@ useEffect((  ) => {
   } else {
     navigate("/login");
   }
-}, [dispatch, navigate, sucessDelete]);
+}, [dispatch, navigate, sucessDelete,userInfo]);
 
 const deleteHandler = (id) =>{
   if(window.confirm('Are you sure you want to delete this user?')){
