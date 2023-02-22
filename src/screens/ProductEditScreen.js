@@ -3,8 +3,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
-import { listProductDetails} from "../actions/productActions";
-
+import { listProductDetails, updateProduct } from "../actions/productActions";
+import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 
 const ProductEditScreen = () => {
   const params = useParams();
@@ -17,17 +17,24 @@ const ProductEditScreen = () => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
 
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
   const { error, loading, product } = productDetails;
 
- 
+  const productUpdate = useSelector((state) => state.productUpdate);
+  const {
+    error: errorUpdate,
+    loading: loadingUpdate,
+    success: successUpdate,
+  } = productUpdate;
 
   useEffect(() => {
-
+    if (successUpdate) {
+      dispatch({ type: PRODUCT_UPDATE_RESET });
+      navigate("/admin/productlist");
+    } else {
       if (!product.name || product._id !== Number(productId)) {
         dispatch(listProductDetails(productId));
       } else {
@@ -38,14 +45,23 @@ const ProductEditScreen = () => {
         setModel(product.model);
         setCountInStock(product.countInStock);
         setDescription(product.description);
-        ;
       }
-  }, [dispatch,product, productId, navigate]);
+    }
+  }, [dispatch, product, productId, navigate, successUpdate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-// Update product
-  };
+    dispatch(
+      updateProduct({
+        _id: productId,
+        name,
+        price,
+        image,
+        make,
+        model,
+        countInStock,
+        description,
+      }))};
 
   return (
     <div className="my-5 p-4">
@@ -54,6 +70,9 @@ const ProductEditScreen = () => {
       </Link>
       <Container className="bg-dark my-5 p-3">
         <h1 className="mx-auto py-3">Edit Product</h1>
+        {loadingUpdate && <Loader/>}
+        {errorUpdate && <Alert variant="danger">{errorUpdate}</Alert>}
+
 
         {loading ? (
           <Loader />
