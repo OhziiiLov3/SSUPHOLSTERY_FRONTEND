@@ -21,7 +21,7 @@ const ProductEditScreen = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const productDetails = useSelector((state) => state.procductDetails);
+  const productDetails = useSelector((state) => state.productDetails);
   const { error, loading, product } = productDetails;
 
  
