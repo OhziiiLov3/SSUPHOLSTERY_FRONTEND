@@ -16,6 +16,7 @@ import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
+import OrderListScreen from "./screens/OrderListScreen";
 import About from "./components/About";
 // import Contact from "./components/Contact"
 import VolkswagenScreen from "./screens/VolkswagenScreen";
@@ -45,6 +46,8 @@ function App() {
 
         <Route path="/admin/productlist" element={<ProductListScreen />} />
         <Route path="/admin/product/:id/edit" element={<ProductEditScreen />} />
+
+        <Route path="/admin/orderlist" element={<OrderListScreen />} />
       </Routes>
 
       <Footer />
