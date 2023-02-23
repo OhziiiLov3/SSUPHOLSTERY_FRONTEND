@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios'
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +17,8 @@ const ProductEditScreen = () => {
   const [model, setModel] = useState("");
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
+  const [uploading, setUploading] = useState(false);
+
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -45,6 +48,7 @@ const ProductEditScreen = () => {
         setModel(product.model);
         setCountInStock(product.countInStock);
         setDescription(product.description);
+
       }
     }
   }, [dispatch, product, productId, navigate, successUpdate]);
@@ -63,6 +67,31 @@ const ProductEditScreen = () => {
         description,
       }))};
 
+
+  const uploadFileHandler = async (e) =>{
+      const file = e.target.files[0]
+      const formData = new FormData()
+      formData.append('image',file)
+      formData.append('product_id',productId)
+      setUploading(true)
+
+
+      try{
+        const config = {
+          headers:{
+               'Content-Type':'multipart/form-data'
+          } 
+        }
+
+        const {data} = await axios.post('/api/products/upload/',formData, config)
+        setImage(data)
+        setUploading(false)
+      }catch(error){
+        setUploading(false)
+      }
+  }
+
+
   return (
     <div className="my-5 p-4">
       <Link className="btn btn-primary" to={"/admin/productlist"}>
@@ -70,9 +99,8 @@ const ProductEditScreen = () => {
       </Link>
       <Container className="bg-dark my-5 p-3">
         <h1 className="mx-auto py-3">Edit Product</h1>
-        {loadingUpdate && <Loader/>}
+        {loadingUpdate && <Loader />}
         {errorUpdate && <Alert variant="danger">{errorUpdate}</Alert>}
-
 
         {loading ? (
           <Loader />
@@ -108,6 +136,18 @@ const ProductEditScreen = () => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
+
+              <Form.Group controlId="image-file" className="mb-3">
+                {" "}
+                <Form.Label>Upload Image</Form.Label>{" "}
+                <Form.Control
+                  type="file"
+                  label="Choose File"
+                  custom
+                  onChange={uploadFileHandler}
+                />{" "}
+              </Form.Group>
+              {uploading && <Loader />}
             </Form.Group>
 
             <Form.Group className="mb-3 py-3" controlId="make">
