@@ -4,6 +4,7 @@ import logo from "../assets/PrimaryIcon.png";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-scroll";
+import SearchBox from "../components/SearchBox"
 import {logout} from '../actions/userActions'
 
 const NavbarComponent = () => {
@@ -25,71 +26,45 @@ const NavbarComponent = () => {
       expand="lg"
       collaspeonselect="true"
     >
-      <Container>
+      <Container fluid>
         <a className="navbar-brand" href="/">
           <img className="logo" src={logo} alt="logo..." />
         </a>
         <LinkContainer to="/">
           <Navbar.Brand>Swift Stitch Upholstery</Navbar.Brand>
         </LinkContainer>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <SearchBox />
+          <Nav className="justify-content-end flex-grow-1 pe-2 ms-auto">
             <NavDropdown
               className="nav-item dropdown"
               href="/services"
-              title="Store"
+              title="See More"
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item href="/store">Store</NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Item href="/store"></NavDropdown.Item>
 
-              <NavDropdown.Item className="dropdown" href="/volkswagen">
-                Volkswagen
+              <NavDropdown.Item className="dropdown" href="/about">
+                About
                 <NavDropdown className="dropdown-menu submenu">
                   <NavDropdown.Item>
-                    <a href="/" className="dropdown-item">
-                      Mk1
+                    <a href="/about" className="dropdown-item">
+                      About
                     </a>
                   </NavDropdown.Item>
                 </NavDropdown>
               </NavDropdown.Item>
 
-              <NavDropdown.Item href="#supplies">
-                Upholstery Supplies + Tools
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#seatcovers">
-                Pre-Made Seat Covers
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
+
               <NavDropdown.Divider />
               <NavDropdown.Item href="/merchandise">
                 Merchandise
               </NavDropdown.Item>
             </NavDropdown>
-            <LinkContainer to="about">
-              <Link
-                className="nav-link"
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-              >
-                About
-              </Link>
-            </LinkContainer>
 
-            <LinkContainer to="/blog">
-              <Link
-                smooth={true}
-                to="blog"
-                offset={-100}
-                className="nav-link"
-                href="#"
-              >
-                Blog
-              </Link>
-            </LinkContainer>
             <LinkContainer to="/cart">
               <Nav.Link
                 to="/cart"
@@ -138,7 +113,7 @@ const NavbarComponent = () => {
                 <LinkContainer to="/admin/productlist">
                   <NavDropdown.Item>Products</NavDropdown.Item>
                 </LinkContainer>
- 
+
                 <LinkContainer to="/admin/orderlist">
                   <NavDropdown.Item>Orders</NavDropdown.Item>
                 </LinkContainer>

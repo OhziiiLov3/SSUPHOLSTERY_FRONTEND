@@ -7,7 +7,7 @@ import {addToCart, removeFromCart} from '../actions/cartActions'
 
 const CartScreen = () => {
   const location = useLocation()
-  const navigate = useNavigate()
+  let navigate = useNavigate()
   const params = useParams()
   const productId = params.id
   const qty = location.search ? Number(location.search.split('=')[1]) :1
@@ -16,6 +16,9 @@ const CartScreen = () => {
   const cart = useSelector( state => state.cart)
   const { cartItems } = cart;
   console.log("cartItems:=>", cartItems); 
+
+  const userLogin = useSelector((state) => state.userLogin);
+   const { userInfo } = userLogin;
 
 
   useEffect(() => {
@@ -31,7 +34,11 @@ const CartScreen = () => {
 
 
   const checkoutHandler = () => {
-       navigate("/login?redirect=shipping");
+      if(!userInfo){
+        navigate("/login?redirect=shipping");
+      }else{
+        navigate("/shipping");
+      }   
     
   }
 
