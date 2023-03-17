@@ -9,7 +9,7 @@ const SearchBox = () => {
 const [keyword, setKeyword] = useState("")
 
 let navigate = useNavigate()
- const { pathname } = useLocation(); 
+
 
 
 const submitHandler = (e) =>{
@@ -17,7 +17,7 @@ const submitHandler = (e) =>{
     if(keyword){
         navigate(`/?keyword=${keyword}`)
     }else{
-        navigate(navigate(pathname));
+        navigate("/");
     }
 }
 
@@ -30,7 +30,7 @@ const submitHandler = (e) =>{
         onChange={(e) => setKeyword(e.target.value)}
         className="mr-sm-2 ml-sm-3"
       ></Form.Control>
-      <Button className="p-1" type="submit" variant="outline-success">
+      <Button className="p-1 mx-2" type="submit" variant="outline-success">
         Search
       </Button>
     </Form>
