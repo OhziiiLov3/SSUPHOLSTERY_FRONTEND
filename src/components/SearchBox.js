@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { Button, Form, InputGroup } from "react-bootstrap";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Button, Form} from "react-bootstrap";
+import { useNavigate} from "react-router-dom";
 
 
 
@@ -22,7 +22,7 @@ const submitHandler = (e) =>{
 }
 
   return (
-    <Form className="d-flex" inline onSubmit={submitHandler}>
+    <Form className="d-flex w-50" inline onSubmit={submitHandler}>
       <Form.Control
         placeholder="Search"
         type="text"

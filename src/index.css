@@ -33,7 +33,7 @@ h3 {
   font-family: 'Bebas Neue', cursive !important;
   font-family: 'Kdam Thmor Pro', sans-serif !important;
   font-family: 'Raleway', sans-serif !important;
-  font-size: 40px !important;
+  font-size: 2rem !important;
   letter-spacing: .0200rem;
   color: #2E2E2E !important;
   padding: 1rem 0;
@@ -767,4 +767,29 @@ textarea.form-control {
   }
 }
 
-/* *** FOOTER *** */
+
+
+/* ********** FOOTER ******** */
+
+.footer {
+  background: #2A2928 !important;
+  color: var(--primary-black);
+  padding: 3rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: rgb(193, 156, 106);
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: rgb(193, 156, 106);
+  cursor: pointer;
+}
+
+.footer p {
+  margin-bottom: 0;
+  -webkit-text-stroke-width: .4px !important;
+  -webkit-text-stroke-color: rgb(193, 156, 106) !important;
+}

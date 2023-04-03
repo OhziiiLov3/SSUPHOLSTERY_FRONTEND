@@ -6,8 +6,8 @@ import {Container, Card,Button} from 'react-bootstrap'
 
 function Services() {
     return (
-      <Container className="mx-auto py-3">
-        <h1>Services</h1>
+      <Container className="mx-auto py-3 w-100">
+        <h1 className='text-center'>Services</h1>
         <Card className="text-center mx-auto">
           <Card.Header>Services</Card.Header>
           <Card.Body>

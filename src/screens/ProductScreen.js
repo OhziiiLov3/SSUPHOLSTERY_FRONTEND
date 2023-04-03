@@ -28,7 +28,7 @@ function ProductScreen({history}) {
     }
 
     return (
-      <div className="my-3 p-5">
+      <div className="my-5 p-5">
         <Link to="/" className="btn btn-light my-3">
           Go Back
         </Link>

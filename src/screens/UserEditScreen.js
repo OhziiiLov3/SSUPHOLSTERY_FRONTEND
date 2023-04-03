@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate, useParams} from "react-router-dom";
+import { Link, useNavigate, useParams} from "react-router-dom";
 import { Form, Button, Container, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
-import Message from "../components/Message";
+
 import { getUserDetails, updateUser } from "../actions/userActions";
 import {USER_UPDATE_RESET} from '../constants/userContstants'
 
@@ -41,7 +41,7 @@ const UserEditScreen = () => {
         }
       }
      
-  }, [user, userId, successUpdate, navigate]);
+  }, [user, userId, successUpdate, navigate,dispatch]);
 
   const submitHandler = (e) => {
     e.preventDefault();

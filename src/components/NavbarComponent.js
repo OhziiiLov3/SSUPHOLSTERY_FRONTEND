@@ -37,32 +37,24 @@ const NavbarComponent = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <SearchBox />
-          <Nav className="justify-content-end flex-grow-1 pe-2 ms-auto">
+          <Nav className="justify-content-end flex-grow-1 pe-2 ml-auto">
             <NavDropdown
               className="nav-item dropdown"
               href="/services"
               title="See More"
               id="basic-nav-dropdown"
             >
-              <NavDropdown.Item href="/store"></NavDropdown.Item>
-
-              <NavDropdown.Item className="dropdown" href="/about">
-                About
-                <NavDropdown className="dropdown-menu submenu">
-                  <NavDropdown.Item>
-                    <a href="/about" className="dropdown-item">
-                      About
-                    </a>
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </NavDropdown.Item>
-
-              <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
+              <LinkContainer to="/about">
+                <NavDropdown.Item className="dropdown">About</NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to="/blog">
+                <NavDropdown.Item>Blog</NavDropdown.Item>
+              </LinkContainer>
 
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/merchandise">
-                Merchandise
-              </NavDropdown.Item>
+              <LinkContainer to="/merchandise">
+                <NavDropdown.Item>Merchandise</NavDropdown.Item>
+              </LinkContainer>
             </NavDropdown>
 
             <LinkContainer to="/cart">

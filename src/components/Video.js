@@ -5,9 +5,9 @@ import { Container} from "react-bootstrap";
 const Video = () => {
   return (
     <div>
-      <h1>Video</h1>
+      <h1 className='text-center'>Video</h1>
       <Container className="d-flex align-items-center justify-content-center mx-auto p-2">
-        <video src={VideoLogo} autoPlay loop muted />
+        <video className="h-100 w-100"src={VideoLogo} autoPlay loop muted />
         <div className="video-content">
           <h1>Swift Stitch Upholstery</h1>
         </div>

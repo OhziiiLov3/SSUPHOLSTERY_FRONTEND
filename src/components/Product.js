@@ -1,13 +1,14 @@
 import React from 'react'
-import  {Card} from 'react-bootstrap'
+import  {Card, Container} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 
 const Product = ({product}) => {
   return (
-    <Card className="my-3 p-3 rounded">
+      <Container className="d-flex align-items-center justify-content-center mx-auto p-2">
+    <Card style={{ width: "18rem"}} className="my-2 p-2 rounded bg-light">
       <Link to={`/product/${product._id}`}>
         <Card.Img
-          className="productCard img-fluid mx-auto d-block"
+          className="productCard img-fluid mx-auto d-block w-100 my-3 py-2"
           src={product.image}
           variant="top"
         />
@@ -21,8 +22,14 @@ const Product = ({product}) => {
         <Card.Text as="h3">
           <div className="cardText">${product.price}</div>
         </Card.Text>
+        <hr />
+        <Card.Text as="p">
+          <div className="cardText">Model: {product.model}</div>
+          <div className="cardText">Make: {product.make}</div>
+        </Card.Text>
       </Card.Body>
     </Card>
+    </Container>
   );
 }
 
