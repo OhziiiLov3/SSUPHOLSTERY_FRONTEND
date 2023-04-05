@@ -1,35 +1,35 @@
 const blog = [
   {
     _id: "1",
-    name: "Nov Blog",
-    image: "/assets/Volkswagen_mk1.jpeg",
+    name: "Work Hard, Play Harder...",
+    image: "/images/auto_car1.png",
     date: "November 10th",
     description:
       "Nappa Italia is an OEM style, European leather embossed with the quintessential nappa haircell print. ",
   },
   {
     _id: "2",
-    name: "Dec Blog",
-    image: "/assets/silverpen.jpg",
+    name: "Nothing like the OG!",
+    image: "/images/Volkswagen_mk1.jpeg",
     date: "December 10th",
     description:
-      "Most common for all kinds of lockstitch applications. For use on woven fabrics, leather and artificial leather and coated fabrics",
+      "Nappa Italia is an OEM style, European leather embossed with the quintessential nappa haircell print. ",
   },
   {
     _id: "3",
-    name: "Blog 3",
-    image: "/assets/seatCover_1.png",
+    name: "How we Started!",
+    image: "/images/PrimaryLightCombo.png",
     date: "Janurary 20th",
     description:
-      "Alcantara Pannel with foam...save time in not needing to apply your own foam! Great for multiple uses especially headliners. Relicate only supplies genuine Alcantara that is Made in Italy",
+      "Nappa Italia is an OEM style, European leather embossed with the quintessential nappa haircell print. ",
   },
   {
     _id: "4",
-    name: " Blog March",
-    image: "/assets/PrimaryLightCombo.png",
+    name: " My Dream is my Job!",
+    image: "/images/auto_car2.jpg",
     date: "March 20th",
     description:
-      "Serabond is a bonded polyester thread with outstanding UV resistance suitable for outdoor applications such as marine, motorcycle seats and convertible cars",
+      "Nappa Italia is an OEM style, European leather embossed with the quintessential nappa haircell print. ",
   },
 ];
 

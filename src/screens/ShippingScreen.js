@@ -4,7 +4,7 @@ import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingAddress } from "../actions/cartActions";
 import Checkout from "../components/Checkout";
-
+import logo from "../assets/PrimaryIcon.png";
 
 const ShippingScreen = () => {
 
@@ -29,9 +29,15 @@ const ShippingScreen = () => {
       <Container className="my-5 p-3">
         <Checkout step1 step2 />
         <h1> Shipping</h1>
-        <Row className="justify-content-md-center bg-secondary">
+        <Row
+          className="justify-content-md-center rounded"
+          style={{ backgroundColor: "#2A2928" }}
+        >
+          <a className="navbar-brand justify-content-center mt-3" href="/">
+            <img className="logo" src={logo} alt="logo..." />
+          </a>
           <Col xs={12} md={6}>
-            <h2>Shipping Information</h2>
+            <h2 className="text-center">Shipping Information</h2>
             <Form onSubmit={submitHandler}>
               <Form.Group className="mb-3 py-3" controlId="address">
                 <Form.Label style={{ color: " #FFFFFF " }}>Address</Form.Label>
@@ -82,7 +88,8 @@ const ShippingScreen = () => {
               <Button
                 className="btn-block my-3"
                 type="submit"
-                variant="primary"
+                variant="light"
+                style={{ backgroundColor: "#C19C6A" }}
               >
                 Continue
               </Button>

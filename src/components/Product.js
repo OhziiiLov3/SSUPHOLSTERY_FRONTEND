@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Product = ({product}) => {
   return (
-      <Container className="d-flex align-items-center justify-content-center mx-auto p-2">
+    <Container className="d-flex align-items-center justify-content-center mx-auto p-2">
     <Card style={{ width: "18rem"}} className="my-2 p-2 rounded bg-light">
       <Link to={`/product/${product._id}`}>
         <Card.Img

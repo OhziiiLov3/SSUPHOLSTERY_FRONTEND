@@ -403,6 +403,15 @@ video{
 
 }
 
+.blogCard {
+  justify-content: center;
+  width: 275px !important;
+  max-width: 275px !important;
+  height: 250px !important;
+  background-color: var(--secondary-color) !important;
+
+}
+
 .cardText, h3{
   font-family: 'Bebas Neue', cursive !important;
   font-family: 'Kdam Thmor Pro', sans-serif !important;
@@ -793,6 +802,9 @@ textarea.form-control {
   }
 }
 
+.blog-page{
+  bottom: 0;
+}
 
 
 /* ********** FOOTER ******** */

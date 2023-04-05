@@ -17,7 +17,9 @@ import UserEditScreen from "./screens/UserEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
+import MerchScreen from "./screens/MerchScreen";
 import About from "./components/About";
+import HomeBlog from "./components/HomeBlog";
 // import Contact from "./components/Contact"
 import VolkswagenScreen from "./screens/VolkswagenScreen";
 
@@ -37,6 +39,8 @@ function App() {
             <Route path="/order/:id" element={<OrderScreen />} />
             <Route path="/payment" element={<PaymentScreen />} />
             <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<HomeBlog />} />
+            <Route path="/merchandise" element={<MerchScreen />} />
             <Route path="/volkswagen" element={<VolkswagenScreen />} />
             <Route path="/product/:id" element={<ProductScreen />} />
             <Route path="/cart/:id" element={<CartScreen />} />
@@ -54,8 +58,8 @@ function App() {
             <Route path="/admin/orderlist" element={<OrderListScreen />} />
           </Routes>
         </main>
-      <Footer />
-  </div>
+        <Footer />
+      </div>
     </Router>
   );
 }

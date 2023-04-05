@@ -1,38 +1,39 @@
 import React from 'react'
-import {Card, Container, Col, Row} from 'react-bootstrap'
+import {Card, Container, Col, Row, Button} from 'react-bootstrap'
 import Blog1 from "../assets/MetallicLogoPromoImage.jpg";
 import blogs from '../blog'
+import Contact from '../components/Contact'
 
 const HomeBlog = ({blog}) => {
   return (
-    <div>
-      <h1>Blog</h1>
-      <Container>
-        <Row>
+    <Container className="d-flex align-items-center justify-content-center mx-auto p-2">
+      <div className="blog-page p-5">
+        <h1 className="text-center my-3 py-4">Montly Blog</h1>
+        <Row xs={1} md={2} className="g-4">
           {blogs.map((blog) => (
-            <Col
-              className="d-flex align-items-center justify-content-center"
-              key={blog._id}
-              sm={12}
-              md={6}
-              lg={4}
-              xl={3}
-            >
-              <Card>
-                <h5>{blog.name}</h5>
-                <Card.Img variant="top" src={Blog1} />
+            <Col className="d-flex align-items-center justify-content-center p-2">
+              <Card
+                key={blog._id}
+                style={{ width: "20rem" }}
+                className="my-2 p-2 rounded bg-light"
+              >
+                <Card.Img
+                  variant="top"
+                  className="blogCard img-fluid mx-auto d-block my-3 py-2"
+                  src={blog.image}
+                />
+                <Card.Header>{blog.name}</Card.Header>
                 <Card.Body>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
+                  <Card.Text>{blog.description}</Card.Text>
+                  <Button variant="primary">Read More</Button>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
-      </Container>
-    </div>
+          <Contact />
+      </div>
+    </Container>
   );
 }
 

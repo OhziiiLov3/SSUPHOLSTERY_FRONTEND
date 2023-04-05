@@ -24,7 +24,7 @@ const NavbarComponent = () => {
       classname="navbar"
       variant="light"
       expand="lg"
-      collaspeonselect="true"
+      collapseOnSelect
     >
       <Container fluid>
         <a className="navbar-brand" href="/">
@@ -35,9 +35,13 @@ const NavbarComponent = () => {
         </LinkContainer>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse
+          collaspeonselect="true"
+          className="mx-4 pe-5"
+          id="basic-navbar-nav"
+        >
           <SearchBox />
-          <Nav className="justify-content-end flex-grow-1 pe-2 ml-auto">
+          <Nav className="justify-content-end flex-grow-1 pe-2 ">
             <NavDropdown
               className="nav-item dropdown"
               href="/services"
@@ -66,7 +70,7 @@ const NavbarComponent = () => {
                 duration={500}
                 className="nav-link"
               >
-                <i className="fas fa-shopping-cart"></i>
+                <i className="fas  fa-shopping-cart fa-xs"></i>
                 Cart
               </Nav.Link>
             </LinkContainer>
@@ -90,8 +94,10 @@ const NavbarComponent = () => {
                   duration={500}
                   className="nav-link"
                 >
-                  <i className="fas fa-user"></i>
-                  Login
+                  <div>
+                    <i className="fas fa-user"></i>
+                    Login
+                  </div>
                 </Nav.Link>
               </LinkContainer>
             )}

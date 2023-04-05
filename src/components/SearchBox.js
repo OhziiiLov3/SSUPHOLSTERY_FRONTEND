@@ -22,7 +22,7 @@ const submitHandler = (e) =>{
 }
 
   return (
-    <Form className="d-flex w-40" inline onSubmit={submitHandler}>
+    <Form className="d-flex align-items-center justify-content-center w-40" inline onSubmit={submitHandler}>
       <Form.Control
         placeholder="Search"
         type="text"

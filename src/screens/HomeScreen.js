@@ -59,9 +59,6 @@ function HomeScreen() {
           )}
           {/* <Services /> */}
           <Video />
-          {/* <Row className="my-2 p-3">
-            <HomeBlog blog={blog} />
-          </Row> */}
           <Contact/>
         </div>
       </div>
