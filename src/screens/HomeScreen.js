@@ -4,7 +4,7 @@ import {  useLocation } from "react-router-dom";
 import { Row, Col, Alert } from 'react-bootstrap'
 import Product  from "../components/Product"
 import Loader from "../components/Loader"
-// import Services from '../components/Services' 
+import Contact from '../components/Contact' 
 import Hero from "../components/Hero"
 import Paginate from "../components/Paginate"
 import { listProducts } from '../actions/productActions';
@@ -39,7 +39,7 @@ function HomeScreen() {
     return (
       <div>
         <Hero />
-        <div className="my-2 p-3">
+        <div className="my-3">
           <h1 className="mx-auto py-3 text-center">Feature Products</h1>
           {loading ? (
             <Loader />
@@ -62,6 +62,7 @@ function HomeScreen() {
           {/* <Row className="my-2 p-3">
             <HomeBlog blog={blog} />
           </Row> */}
+          <Contact/>
         </div>
       </div>
     );

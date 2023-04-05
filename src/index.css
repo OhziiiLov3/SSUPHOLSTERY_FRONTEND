@@ -12,9 +12,17 @@ body{
 font-family: 'Oswald', sans-serif !important;
 background-color: #FFFFFF !important;
 }
-/* *** HEADER *** */
+/* *** Main *** */
 main{
-  min-height: 80vh;
+  flex: 1 0 auto;
+}
+/* Main Container */
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
 }
 
 h1 {
@@ -115,6 +123,8 @@ nav a.nav-link {
 .dropdown-menu:hover.submenu{
   display: block;
 }
+
+
 
 
 
@@ -417,14 +427,13 @@ video{
   position: relative;
   border-radius: 50%;
   padding: .1rem;
-  border: 3px solid rgb(147,203,73,.7);
+  border: 3px solid rgb(193, 156, 106, .7);
   top: 10px;
 }
 
 .about-heading{
-  color: rgb(147,203,73);
   text-transform: uppercase;
-   -webkit-text-stroke-width: .7px ;
+   -webkit-text-stroke-width: .7px !important ;
   -webkit-text-stroke-color: black ;
 
 }
@@ -447,7 +456,7 @@ video{
     align-items: center;
     display: flex;
     letter-spacing: .0300rem;
-    color: rgb(147, 203, 73);
+    color: rgb(193, 156, 106, .7);
     padding: 2rem 0;
   }
 }
@@ -462,6 +471,10 @@ video{
   justify-content: center;
   align-items: center;
 
+}
+
+.about-title{
+  font-size: 4rem !important;
 }
 
 .aboutimage {
@@ -483,6 +496,19 @@ video{
   color: rgb(147, 203, 73);
 
 }
+
+.about-text{
+  font-family: 'Bebas Neue', cursive !important;
+  font-family: 'Kdam Thmor Pro', sans-serif !important;;
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 2rem !important;
+  letter-spacing: .0200rem;
+  padding: 3rem 0;
+  /* -webkit-text-stroke-width: 1.2px !important;
+  -webkit-text-stroke-color: rgb(193, 156, 106); */
+}
+
+
 
 @media(max-width:414px) {
   .aboutimage img {
@@ -604,7 +630,7 @@ video{
 
 /* ****** MEDIA ******** */
 
-@media(maxwidth: 700px) {
+@media(max-width: 700px) {
   .myClasses .container {
     padding-left: 0;
   }
@@ -700,7 +726,7 @@ video{
 .contact-btn {
   margin: 1rem 0 0 0;
   background: none;
-  width: 50%;
+  width: 75%;
 }
 
 .contact-btn:hover {
@@ -747,7 +773,7 @@ textarea.form-control {
 
 .success-message {
   font-weight: 900;
-  color: rgb(147, 203, 73);
+  color: rgba(22, 22, 22);
 }
 
 
@@ -773,8 +799,8 @@ textarea.form-control {
 
 .footer {
   background: #2A2928 !important;
-  color: var(--primary-black);
-  padding: 3rem;
+  /* padding: 2rem !important; */
+  bottom: 0  !important;
 }
 
 .footer a {
@@ -792,4 +818,10 @@ textarea.form-control {
   margin-bottom: 0;
   -webkit-text-stroke-width: .4px !important;
   -webkit-text-stroke-color: rgb(193, 156, 106) !important;
+}
+
+@media(max-width: 700px) {
+  .footer{
+    margin-top: 0;
+  }
 }

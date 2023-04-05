@@ -5,10 +5,10 @@ import { Link } from "react-scroll";
 import { SocialIcon } from "react-social-icons";
 function Footer() {
     return (
-      <div className="footer mx-auto p-1 fixed-bottom">
+      <div className="footer p-1">
         <Container>
           <Row>
-            <Col className="col-lg-4 col-md-6 col-sm-6 my-2">
+            <Col className="col-lg-4 col-md-6 col-sm-6 my-2 p-2">
               <div className="d-flex">
                 <p>New Jersey</p>
               </div>
@@ -19,7 +19,7 @@ function Footer() {
                 <p>Email: ssupholstrey@gmail.com</p>
               </div>
             </Col>
-            <Col className="col-lg- col-md-2 col-sm-6 my-2">
+            <Col className="col-lg-2 col-md-6 col-sm-6 my-2">
               <div className="row">
                 <div className="col">
                   <LinkContainer to="/">
@@ -90,7 +90,7 @@ function Footer() {
                 </div>
               </div>
             </Col>
-            <Col className="col-lg-5 col-md-5 col-sm-6 align-itmes-center ">
+            <Col className="col-lg-5 col-md-8 col-sm-8 align-itmes-center">
               <div className="d-flex justify-content-center p-3">
                 <SocialIcon
                   className="me-2"

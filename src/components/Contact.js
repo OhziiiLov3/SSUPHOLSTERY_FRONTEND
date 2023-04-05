@@ -11,9 +11,9 @@ function Contact() {
   } = useForm();
 
   const form = useRef();
-  const serviceID = "service_ID";
-  const templateID = "JMOtemplate_ID";
-  const userID = "user_yd0HoddbkToxCxmJDWBi6";
+  const serviceID = "service_dmh8zqt";
+  const templateID = "swiftTemplate_ID";
+  const userID = "l19zo3UL4gYPE94C4";
 
   const onSubmit = (data, r) => {
     sendEmail(
@@ -41,7 +41,7 @@ function Contact() {
   };
 
   return (
-    <div id="contact" className="contact mx-auto py-5 ">
+    <div id="contact" className="contact mx-5 py-6 ">
       <div className="text-center">
         <h1>Contact Me</h1>
         <p>
@@ -151,8 +151,8 @@ function Contact() {
               <span className="error-message">
                 {errors.description && errors.description.message}
               </span>
-              <button className="btn btn-success contact-btn" type="submit">
-                Connect
+              <button className="btn btn-light contact-btn" type="submit">
+                Contact
               </button>
             </div>
           </div>
